@@ -1,297 +1,199 @@
-<h1 align="center">Understand Anything</h1>
+<h1 align="center">Graph Understand for Claude Code</h1>
 
 <p align="center">
-  <strong>Turn any codebase, knowledge base, or docs into an interactive knowledge graph you can explore, search, and ask questions about.</strong>
+  <strong>Biến bất kỳ codebase, knowledge base hay tài liệu nào thành một đồ thị tri thức (knowledge graph) tương tác — để bạn khám phá, tìm kiếm và đặt câu hỏi trực tiếp trên đó.</strong>
   <br />
-  <em>Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.</em>
+  <em>Được xây dựng riêng cho <a href="https://code.claude.com/docs/en/plugins-reference#plugins-reference">Claude Code</a>.</em>
 </p>
 
 <p align="center">
-  <strong>Understand Anything. <a href="https://egonex.ai">Understand Anyone.</a></strong>
-  <br />
-  <em>AI should help people, not replace them.</em>
+  <strong>Đừng đọc code một cách mù mờ. Hãy nhìn thấy bức tranh tổng thể.</strong>
 </p>
 
 <p align="center">
-  <a href="https://trendshift.io/repositories/23482" target="_blank"><img src="https://trendshift.io/api/badge/repositories/23482" alt="Understand Anything | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+  🇻🇳 Tiếng Việt | <a href="READMEs/README.en.md">🇬🇧 English</a>
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> | <a href="READMEs/README.zh-CN.md">简体中文</a> | <a href="READMEs/README.zh-TW.md">繁體中文</a> | <a href="READMEs/README.ja-JP.md">日本語</a> | <a href="READMEs/README.ko-KR.md">한국어</a> | <a href="READMEs/README.es-ES.md">Español</a> | <a href="READMEs/README.tr-TR.md">Türkçe</a> | <a href="READMEs/README.ru-RU.md">Русский</a>
-</p>
-
-<p align="center">
-  <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick_Start-blue" alt="Quick Start" /></a>
-  <a href="https://github.com/Egonex-AI/Understand-Anything/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow" alt="License: MIT" /></a>
+  <a href="#-bắt-đầu-nhanh"><img src="https://img.shields.io/badge/Bắt_đầu_nhanh-blue" alt="Bắt đầu nhanh" /></a>
+  <a href="https://github.com/huycoder2103/Graph-Understanf-for-claudeCodeCLI/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow" alt="License: MIT" /></a>
   <a href="https://docs.anthropic.com/en/docs/claude-code"><img src="https://img.shields.io/badge/Claude_Code-8A2BE2" alt="Claude Code" /></a>
-  <a href="#codex"><img src="https://img.shields.io/badge/Codex-000000" alt="Codex" /></a>
-  <a href="#vs-code--github-copilot"><img src="https://img.shields.io/badge/Copilot-24292e" alt="Copilot" /></a>
-  <a href="#copilot-cli"><img src="https://img.shields.io/badge/Copilot_CLI-24292e" alt="Copilot CLI" /></a>
-  <a href="#gemini-cli"><img src="https://img.shields.io/badge/Gemini_CLI-4285F4" alt="Gemini CLI" /></a>
-  <a href="#opencode"><img src="https://img.shields.io/badge/OpenCode-38bdf8" alt="OpenCode" /></a>
-  <a href="#mistral-vibe-cli"><img src="https://img.shields.io/badge/Vibe_CLI-7c3aed" alt="Vibe CLI" /></a>
-  <a href="#trae"><img src="https://img.shields.io/badge/Trae-7e22ce" alt="Trae" /></a>
-  <a href="https://understand-anything.com"><img src="https://img.shields.io/badge/Homepage-d4a574" alt="Homepage" /></a>
-  <a href="https://understand-anything.com/demo/"><img src="https://img.shields.io/badge/Live_Demo-00c853" alt="Live Demo" /></a>
-  <a href="https://egonex.ai"><img src="https://img.shields.io/badge/Understand_Anyone-egonex.ai-d4a574" alt="Understand Anyone" /></a>
 </p>
 
 <p align="center">
-  <img src="assets/hero.png" alt="Understand Anything — Turn any codebase into an interactive knowledge graph" width="800" />
+  <img src="assets/hero.png" alt="Graph Understand for Claude Code — biến codebase thành đồ thị tri thức tương tác" width="800" />
 </p>
 
 <p align="center">
-  <strong>An open-source project from <a href="https://github.com/Egonex-AI">Egonex</a></strong>
+  <strong>Được phát triển và tùy biến bởi <a href="https://github.com/huycoder2103">huycoder2103</a></strong>
   <br />
-  <em>Originally created by <a href="https://github.com/Lum1104">Lum1104</a>.</em>
+  <em>Dựa trên dự án mã nguồn mở <a href="https://github.com/Egonex-AI/Understand-Anything">Understand Anything</a> của <a href="https://github.com/Egonex-AI">Egonex</a>, được khởi tạo bởi <a href="https://github.com/Lum1104">Lum1104</a>. Bản này được tối giản để tập trung hoàn toàn vào Claude Code.</em>
 </p>
 
 ---
 
-**You just joined a new team. The codebase is 200,000 lines of code. Where do you even start?**
+**Bạn vừa gia nhập một team mới. Codebase có 200.000 dòng code. Bạn bắt đầu từ đâu?**
 
-Understand Anything is a [Claude Code Plugin](https://code.claude.com/docs/en/plugins-reference#plugins-reference) that analyzes your project with a multi-agent pipeline, builds a knowledge graph of every file, function, class, and dependency, then gives you an interactive dashboard to explore it all visually. Stop reading code blind. Start seeing the big picture.
+Đây là một [Claude Code Plugin](https://code.claude.com/docs/en/plugins-reference#plugins-reference) phân tích dự án của bạn bằng một pipeline đa tác tử (multi-agent), dựng nên một đồ thị tri thức gồm mọi file, hàm, class và dependency, rồi cho bạn một dashboard tương tác để khám phá tất cả bằng hình ảnh. Ngừng đọc code một cách mù mờ. Bắt đầu nhìn thấy bức tranh lớn.
 
-> **The goal isn't a graph that wows you with how complex your codebase is — it's a graph that quietly teaches you how every piece fits together.**
+> **Mục tiêu không phải một đồ thị khiến bạn choáng ngợp vì codebase phức tạp cỡ nào — mà là một đồ thị âm thầm dạy bạn hiểu từng mảnh ghép khớp với nhau ra sao.**
 
 ---
 
-## ✨ Features
+## ✨ Tính năng
 
-> [!NOTE]
-> **Want to skip the reading?** Try the [live demo](https://understand-anything.com/demo/) in our [homepage](https://understand-anything.com/) — a fully interactive dashboard you can pan, zoom, search, and explore right in your browser.
+### Khám phá đồ thị cấu trúc
 
-### Explore the structural graph
+Điều hướng codebase như một đồ thị tri thức tương tác — mỗi file, hàm và class là một node có thể click, tìm kiếm và khám phá. Chọn bất kỳ node nào để xem tóm tắt bằng ngôn ngữ đời thường, các mối quan hệ và tour hướng dẫn.
 
-Navigate your codebase as an interactive knowledge graph — every file, function, and class is a node you can click, search, and explore. Select any node to see plain-English summaries, relationships, and guided tours.
+### Hiểu logic nghiệp vụ
 
-### Understand business logic
+Chuyển sang chế độ domain và xem code của bạn ánh xạ vào các quy trình nghiệp vụ thực tế ra sao — domain, luồng (flow) và các bước (step) được bố trí thành một đồ thị ngang.
 
-Switch to the domain view and see how your code maps to real business processes — domains, flows, and steps laid out as a horizontal graph.
+### Phân tích knowledge base
 
-### Analyze knowledge bases
-
-Point `/understand-knowledge` at a [Karpathy-pattern LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) and get a force-directed knowledge graph with community clustering. The deterministic parser extracts wikilinks and categories from `index.md`, then LLM agents discover implicit relationships, extract entities, and surface claims — turning your wiki into a navigable graph of interconnected ideas.
+Trỏ `/understand-knowledge` vào một [LLM wiki theo mẫu Karpathy](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) để nhận một đồ thị tri thức force-directed với gom cụm cộng đồng (community clustering). Bộ parser tất định trích xuất wikilink và category từ `index.md`, sau đó các agent LLM khám phá các quan hệ ngầm, trích xuất thực thể và nêu bật các luận điểm — biến wiki của bạn thành một đồ thị các ý tưởng liên kết với nhau.
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🧭 Guided Tours</h3>
-      <p>Auto-generated walkthroughs of the architecture, ordered by dependency. Learn the codebase in the right order.</p>
+      <h3>🧭 Tour hướng dẫn</h3>
+      <p>Các bài hướng dẫn tự động về kiến trúc, sắp xếp theo thứ tự phụ thuộc. Học codebase theo đúng trình tự.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>🔍 Fuzzy & Semantic Search</h3>
-      <p>Find anything by name or by meaning. Search "which parts handle auth?" and get relevant results across the graph.</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>📊 Diff Impact Analysis</h3>
-      <p>See which parts of the system your changes affect before you commit. Understand ripple effects across the codebase.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>🎭 Persona-Adaptive UI</h3>
-      <p>The dashboard adjusts its detail level based on who you are — junior dev, PM, or power user.</p>
+      <h3>🔍 Tìm kiếm mờ & ngữ nghĩa</h3>
+      <p>Tìm mọi thứ theo tên hoặc theo ý nghĩa. Gõ "phần nào xử lý auth?" và nhận kết quả liên quan trên toàn đồ thị.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🏗️ Layer Visualization</h3>
-      <p>Automatic grouping by architectural layer — API, Service, Data, UI, Utility — with color-coded legend.</p>
+      <h3>📊 Phân tích tác động của thay đổi</h3>
+      <p>Xem những phần nào của hệ thống bị ảnh hưởng bởi thay đổi của bạn trước khi commit. Hiểu hiệu ứng lan tỏa khắp codebase.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>📚 Language Concepts</h3>
-      <p>12 programming patterns (generics, closures, decorators, etc.) explained in context wherever they appear.</p>
+      <h3>🎭 Giao diện thích ứng theo vai trò</h3>
+      <p>Dashboard tự điều chỉnh mức độ chi tiết theo người dùng — dev junior, PM hay power user.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🏗️ Trực quan hóa theo tầng</h3>
+      <p>Tự động gom nhóm theo tầng kiến trúc — API, Service, Data, UI, Utility — kèm chú thích màu.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📚 Khái niệm ngôn ngữ</h3>
+      <p>12 mẫu lập trình (generics, closures, decorators, v.v.) được giải thích ngay trong ngữ cảnh nơi chúng xuất hiện.</p>
     </td>
   </tr>
 </table>
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Bắt đầu nhanh
 
-### 1. Install the plugin
+### 1. Cài plugin
 
 ```bash
-/plugin marketplace add Egonex-AI/Understand-Anything
+/plugin marketplace add huycoder2103/Graph-Understanf-for-claudeCodeCLI
 /plugin install understand-anything
 ```
 
-> **Using a local model?** For privacy or enterprise setups, point your platform at a local model provider such as [Ollama](https://docs.ollama.com/integrations) — follow their integration guide to change the model provider.
+> **Dùng model local?** Với các thiết lập ưu tiên quyền riêng tư hoặc doanh nghiệp, bạn có thể trỏ Claude Code sang một model provider local như [Ollama](https://docs.ollama.com/integrations) — làm theo hướng dẫn tích hợp của họ để đổi model provider.
 
-### 2. Analyze your codebase
+### 2. Phân tích codebase
 
 ```bash
 /understand
 ```
 
-A multi-agent pipeline scans your project, extracts every file, function, class, and dependency, then builds a knowledge graph saved to `.ua/knowledge-graph.json`. (Projects that already have a `.understand-anything/` directory keep using it — it stays the data directory when present, so nothing needs migrating.)
+Một pipeline đa tác tử quét dự án, trích xuất mọi file, hàm, class và dependency, rồi dựng đồ thị tri thức lưu vào `.ua/knowledge-graph.json`. (Các dự án đã có sẵn thư mục `.understand-anything/` sẽ tiếp tục dùng thư mục đó — không cần migrate gì cả.)
 
-> **Heads up on token usage:** The initial `/understand` analyzes your whole codebase and can consume a significant number of tokens on large projects. We recommend running it on a token plan / subscription, or using a local model (see above) for initialization. Subsequent runs are incremental by default — only changed files are re-analyzed — so they use far fewer tokens.
+> **Lưu ý về token:** Lần chạy `/understand` đầu tiên phân tích toàn bộ codebase và có thể tốn khá nhiều token với dự án lớn. Nên chạy nó bằng gói/subscription theo token, hoặc dùng model local (xem trên) cho bước khởi tạo. Các lần chạy sau mặc định là tăng dần (incremental) — chỉ phân tích lại file đã thay đổi — nên tốn ít token hơn nhiều.
 
-**Localized output:** Use `--language` to generate content in your preferred language:
+**Xuất kết quả theo ngôn ngữ:** Dùng `--language` để tạo nội dung theo ngôn ngữ bạn muốn:
 
 ```bash
-# Generate Chinese content (知识图节点描述和 Dashboard UI)
-/understand --language zh
+# Tạo nội dung tiếng Việt cho node và giao diện Dashboard (nếu được hỗ trợ)
+/understand --language vi
 
-# Supported languages: en (default), zh, zh-TW, ja, ko, ru
+# Các ngôn ngữ hỗ trợ: en (mặc định), zh, zh-TW, ja, ko, ru
 ```
 
-On the **first run** in a project — when you don't pass `--language` and no language is stored yet — `/understand` detects the language you're conversing in. If it isn't English, it asks you to confirm (or override) before generating; English conversations are unaffected. Your choice is saved to `.ua/config.json` and reused on every later run.
+Ở **lần chạy đầu tiên** trong một dự án — khi bạn không truyền `--language` và chưa có ngôn ngữ nào được lưu — `/understand` sẽ phát hiện ngôn ngữ bạn đang trò chuyện. Nếu không phải tiếng Anh, nó sẽ hỏi để bạn xác nhận (hoặc ghi đè) trước khi tạo. Lựa chọn của bạn được lưu vào `.ua/config.json` và tái sử dụng ở mọi lần chạy sau.
 
-The `--language` parameter affects:
-- Node summaries and descriptions in the knowledge graph
-- Dashboard UI labels, buttons, and tooltips
-- Guided tour explanations
+Tham số `--language` ảnh hưởng đến:
+- Tóm tắt và mô tả node trong đồ thị tri thức
+- Nhãn, nút bấm và tooltip trên Dashboard
+- Phần giải thích trong các tour hướng dẫn
 
-### 3. Explore the dashboard
+### 3. Khám phá dashboard
 
 ```bash
 /understand-dashboard
 ```
 
-An interactive web dashboard opens with your codebase visualized as a graph — color-coded by architectural layer, searchable, and clickable. Select any node to see its code, relationships, and a plain-English explanation.
+Một dashboard web tương tác mở ra với codebase được trực quan hóa thành đồ thị — tô màu theo tầng kiến trúc, có thể tìm kiếm và click. Chọn bất kỳ node nào để xem code, mối quan hệ và phần giải thích bằng ngôn ngữ đời thường.
 
-### 4. Keep learning
+### 4. Tiếp tục học
 
 ```bash
-# Ask anything about the codebase
-/understand-chat How does the payment flow work?
+# Hỏi bất cứ điều gì về codebase
+/understand-chat Luồng thanh toán hoạt động thế nào?
 
-# Analyze impact of your current changes
+# Phân tích tác động của các thay đổi hiện tại
 /understand-diff
 
-# Deep-dive into a specific file or function
+# Đào sâu vào một file hoặc hàm cụ thể
 /understand-explain src/auth/login.ts
 
-# Generate an onboarding guide for new team members
+# Tạo hướng dẫn onboarding cho thành viên mới
 /understand-onboard
 
-# Extract business domain knowledge (domains, flows, steps)
+# Trích xuất tri thức nghiệp vụ (domain, flow, step)
 /understand-domain
 
-# Analyze a Karpathy-pattern LLM wiki knowledge base
+# Phân tích một LLM wiki theo mẫu Karpathy
 /understand-knowledge ~/path/to/wiki
 
-# Re-run anytime — incremental by default (only re-analyzes changed files)
+# Chạy lại bất cứ lúc nào — mặc định tăng dần (chỉ phân tích lại file đã đổi)
 /understand
 
-# Auto-update on every commit via a post-commit hook
+# Tự động cập nhật sau mỗi commit qua post-commit hook
 /understand --auto-update
 
-# Scope to a subdirectory (for huge monorepos)
+# Giới hạn phạm vi vào một thư mục con (cho monorepo lớn)
 /understand src/frontend
 ```
 
 ---
 
-## 🌐 Multi-Platform Installation
-
-Understand-Anything works across multiple AI coding platforms.
-
-### Claude Code (Native)
+## 🔌 Cài đặt trên Claude Code
 
 ```bash
-/plugin marketplace add Egonex-AI/Understand-Anything
+/plugin marketplace add huycoder2103/Graph-Understanf-for-claudeCodeCLI
 /plugin install understand-anything
 ```
 
+Sau khi cài, khởi động lại Claude Code nếu cần rồi chạy `/understand` trong dự án của bạn.
 
-### One-line install (Codex / OpenCode / OpenClaw / Antigravity / Gemini CLI / Pi Agent / Vibe CLI / VS Code Copilot / Hermes / Cline / KIMI CLI / Trae / Nanobot / Kiro)
-
-
-**macOS / Linux:**
-```bash
-curl -fsSL https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/install.sh | bash
-# or skip the prompt by passing the platform:
-curl -fsSL https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/install.sh | bash -s codex
-```
-
-**Windows (PowerShell):**
-```powershell
-iwr -useb https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/install.ps1 | iex
-```
-
-The installer clones the repo to `~/.understand-anything/repo` and creates the right symlinks for the chosen platform. Restart your CLI/IDE afterwards.
-
-> **Note on invoking skills:** the invocation prefix differs per platform. Most platforms use slash commands (`/understand`), but **Codex uses `$` instead** — type `$understand`, not `/understand`. If neither prefix is recognized on your platform, just ask in plain language: *"Use the understand skill to analyze this project."*
-
-- Supported `<platform>` values: `gemini`, `codex`, `opencode`, `pi`, `openclaw`, `antigravity`, `vibe`, `vscode`, `hermes`, `cline`, `kimi`, `trae`, `nanobot`, `kiro`
-- Update later: `./install.sh --update`
-- Uninstall: `./install.sh --uninstall <platform>`
-
-### Cursor
-
-Cursor auto-discovers the plugin via `.cursor-plugin/plugin.json` when this repo is cloned. No manual installation needed — just clone and open in Cursor.
-
-If auto-discovery doesn't pick it up, install it manually: open **Cursor Settings → Plugins**, paste `https://github.com/Egonex-AI/Understand-Anything` into the search field, and add it from there.
-
-### VS Code + GitHub Copilot
-
-VS Code with GitHub Copilot (v1.108+) auto-discovers the plugin via `.copilot-plugin/plugin.json` when this repo is cloned. No manual installation needed — just clone and open in VS Code.
-
-For personal skills (available across all projects), run the `install.sh` above with the `vscode` platform.
-
-### Copilot CLI
-
-```bash
-copilot plugin install Egonex-AI/Understand-Anything:understand-anything-plugin
-```
-
-### Kiro CLI / IDE
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Egonex-AI/Understand-Anything/main/install.sh | bash -s kiro
-```
-
-After installation:
-- **Kiro CLI**: `kiro-cli chat --agent understand "Analyze this project"`
-- **Kiro IDE**: The skills are symlinked into `~/.kiro/skills/` and the `understand` agent is written to `~/.kiro/agents/understand.json`, so both are available after restarting the IDE.
-
-For personal skills (available across all projects), run the `install.sh` above with the `kiro` platform.
-
-### Platform Compatibility
-
-| Platform | Status | Install Method |
-|----------|--------|----------------|
-| Claude Code | ✅ Native | Plugin marketplace |
-| Cursor | ✅ Supported | Auto-discovery |
-| VS Code + GitHub Copilot | ✅ Supported | Auto-discovery |
-| Copilot CLI | ✅ Supported | Plugin install |
-| Codex | ✅ Supported | `install.sh codex` |
-| OpenCode | ✅ Supported | `install.sh opencode` |
-| OpenClaw | ✅ Supported | `install.sh openclaw` |
-| Antigravity | ✅ Supported | `install.sh antigravity` |
-| Gemini CLI | ✅ Supported | `install.sh gemini` |
-| Pi Agent | ✅ Supported | `install.sh pi` |
-| Vibe CLI | ✅ Supported | `install.sh vibe` |
-| Hermes | ✅ Supported | `install.sh hermes` |
-| Cline | ✅ Supported | `install.sh cline` |
-| KIMI CLI | ✅ Supported | `install.sh kimi` |
-| Trae | ✅ Supported | `install.sh trae` |
-| Nanobot | ✅ Supported | `install.sh nanobot` |
-| Kiro CLI / IDE | ✅ Supported | `install.sh kiro` |
-
+> **Yêu cầu:** Node.js >= 22 và pnpm >= 10 nếu bạn muốn build từ mã nguồn (xem `CLAUDE.md`). Để chỉ dùng plugin thì chỉ cần Claude Code.
 
 ---
 
-## 📦 Share the Graph with Your Team
+## 📦 Chia sẻ đồ thị với cả team
 
-The graph is just JSON — **commit it once, and teammates skip the pipeline**. Good for onboarding, PR reviews, and docs-as-code.
+Đồ thị chỉ là JSON — **commit một lần, cả team bỏ qua được bước chạy pipeline**. Rất hợp cho onboarding, review PR và docs-as-code.
 
-> **Example:** [GoogleCloudPlatform/microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) — Go / Java / Python / Node reference with a committed graph.
-
-**What to commit:** everything in `.ua/` *except* `intermediate/` and `diff-overlay.json` (those are local scratch). (Legacy projects use `.understand-anything/` — substitute that directory name below if it's the one present.)
+**Nên commit gì:** mọi thứ trong `.ua/` *ngoại trừ* `intermediate/` và `diff-overlay.json` (đó là file nháp cục bộ). (Dự án cũ dùng `.understand-anything/` — thay tên thư mục tương ứng bên dưới nếu đó là thư mục đang có.)
 
 ```gitignore
 .ua/intermediate/
 .ua/diff-overlay.json
 ```
 
-**Keep it fresh:** enable `/understand --auto-update` — a post-commit hook incrementally patches the graph so each commit lands with a matching graph. Or re-run `/understand` manually before releases.
+**Giữ đồ thị luôn mới:** bật `/understand --auto-update` — một post-commit hook sẽ vá đồ thị theo kiểu tăng dần để mỗi commit đi kèm một đồ thị khớp. Hoặc chạy lại `/understand` thủ công trước mỗi lần release.
 
-**Large graphs (10 MB+):** track with **git-lfs**.
+**Đồ thị lớn (10 MB+):** theo dõi bằng **git-lfs**.
 
 ```bash
 git lfs install
@@ -299,94 +201,66 @@ git lfs track ".ua/*.json"
 git add .gitattributes .ua/
 ```
 
-### View the dashboard without Claude Code
+### Xem dashboard mà không cần Claude Code
 
-Once a graph has been generated and committed, anyone on the team can open it with one command — no Claude Code, no LLM, no API key. Only Node.js (>= 18) is required:
+Sau khi một đồ thị đã được tạo và commit, bất kỳ ai trong team cũng có thể mở nó bằng một lệnh — không cần Claude Code, không LLM, không API key. Chỉ cần Node.js (>= 18):
 
 ```bash
-npx https://github.com/Egonex-AI/Understand-Anything/releases/latest/download/understand-anything-viewer.tgz /path/to/analyzed/project
+npx https://github.com/huycoder2103/Graph-Understanf-for-claudeCodeCLI/releases/latest/download/understand-anything-viewer.tgz /path/to/analyzed/project
 ```
 
-The terminal prints a tokenized URL (`http://127.0.0.1:5173/?token=…`) and opens the full interactive dashboard in your browser. The project directory (default: current directory) must contain the committed data directory (`.ua/`, or legacy `.understand-anything/`). Everything is served read-only from local disk — no LLM calls, no data leaves your machine.
+Terminal sẽ in ra một URL có token (`http://127.0.0.1:5173/?token=…`) và mở dashboard tương tác đầy đủ trong trình duyệt. Thư mục dự án (mặc định: thư mục hiện tại) phải chứa thư mục dữ liệu đã commit (`.ua/`, hoặc `.understand-anything/` cũ). Mọi thứ được phục vụ chỉ-đọc từ ổ đĩa cục bộ — không có lời gọi LLM, không có dữ liệu nào rời khỏi máy bạn.
 
-Working from a clone instead? `pnpm install && pnpm --filter @understand-anything/core build`, then `GRAPH_DIR=/path/to/analyzed/project pnpm dev:dashboard` does the same via the Vite dev server.
-
----
-
-## 🔧 Under the Hood
-
-### Tree-sitter + LLM hybrid
-
-Static analysis and LLMs do what each does best:
-
-- **Tree-sitter (deterministic)** — parses source into a concrete syntax tree and extracts structural facts: imports, exports, function/class definitions, call sites, inheritance. Pre-resolved into an `importMap` during the scan phase and passed to file-analyzers so they don't re-derive imports from source. Same input → same output, every run. Also powers fingerprint-based change detection for incremental updates.
-- **LLM (semantic)** — reads the parsed structure alongside the original source to produce what parsers can't: plain-English summaries, tags, architectural layer assignments, business-domain mapping, guided tours, language concept callouts.
-
-This split is why the graph is reproducible on the structural side (the same code always yields the same edges) while still capturing intent on the semantic side (what a file is *for*, not just what it imports).
-
-### Multi-Agent Pipeline
-
-The `/understand` command orchestrates 5 specialized agents, and `/understand-domain` adds a 6th:
-
-| Agent | Role |
-|-------|------|
-| `project-scanner` | Discover files, detect languages and frameworks |
-| `file-analyzer` | Extract functions, classes, imports; produce graph nodes and edges |
-| `architecture-analyzer` | Identify architectural layers |
-| `tour-builder` | Generate guided learning tours |
-| `graph-reviewer` | Validate graph completeness and referential integrity (runs inline by default; use `--review` for full LLM review) |
-| `domain-analyzer` | Extract business domains, flows, and process steps (used by `/understand-domain`) |
-| `article-analyzer` | Extract entities, claims, and implicit relationships from wiki articles (used by `/understand-knowledge`) |
-
-File analyzers run in parallel (up to 5 concurrent, 20-30 files per batch). Supports incremental updates — only re-analyzes files that changed since the last run.
+Làm việc từ một bản clone? `pnpm install && pnpm --filter @understand-anything/core build`, rồi `GRAPH_DIR=/path/to/analyzed/project pnpm dev:dashboard` cho kết quả tương tự qua Vite dev server.
 
 ---
 
-## 🎥 Community
+## 🔧 Bên dưới nắp capô
 
-A community-made walkthrough by **Better Stack**.
+### Kết hợp Tree-sitter + LLM
 
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=VmIUXVlt7_I"><img src="https://img.youtube.com/vi/VmIUXVlt7_I/maxresdefault.jpg" alt="Community walkthrough by Better Stack — watch on YouTube" width="480" /></a>
-  <br />
-  <em><a href="https://www.youtube.com/watch?v=VmIUXVlt7_I">Watch on YouTube &rarr;</a></em>
-</p>
+Phân tích tĩnh và LLM làm đúng thế mạnh của mỗi bên:
 
-Made a video, blog post, or tutorial? Open an issue or PR — happy to feature it here.
+- **Tree-sitter (tất định)** — parse mã nguồn thành cây cú pháp cụ thể và trích xuất các sự kiện cấu trúc: import, export, định nghĩa hàm/class, call site, kế thừa. Được giải quyết sẵn thành một `importMap` trong pha quét và truyền cho các file-analyzer để chúng không phải suy ra lại import từ mã nguồn. Cùng đầu vào → cùng đầu ra, mọi lần chạy. Cũng là nền tảng cho phát hiện thay đổi dựa trên fingerprint phục vụ cập nhật tăng dần.
+- **LLM (ngữ nghĩa)** — đọc cấu trúc đã parse cùng với mã nguồn gốc để tạo ra thứ parser không làm được: tóm tắt bằng ngôn ngữ đời thường, tag, gán tầng kiến trúc, ánh xạ domain nghiệp vụ, tour hướng dẫn, chú thích khái niệm ngôn ngữ.
+
+Sự phân chia này là lý do đồ thị có tính tái lập ở phần cấu trúc (cùng một đoạn code luôn cho ra cùng các cạnh) trong khi vẫn nắm bắt được ý định ở phần ngữ nghĩa (một file *để làm gì*, chứ không chỉ nó import gì).
+
+### Pipeline đa tác tử
+
+Lệnh `/understand` điều phối 5 agent chuyên biệt, và `/understand-domain` bổ sung agent thứ 6:
+
+| Agent | Vai trò |
+|-------|---------|
+| `project-scanner` | Phát hiện file, nhận diện ngôn ngữ và framework |
+| `file-analyzer` | Trích xuất hàm, class, import; tạo node và cạnh cho đồ thị |
+| `architecture-analyzer` | Nhận diện các tầng kiến trúc |
+| `tour-builder` | Tạo các tour học tập có hướng dẫn |
+| `graph-reviewer` | Kiểm tra tính đầy đủ và toàn vẹn tham chiếu của đồ thị (mặc định chạy inline; dùng `--review` để LLM review đầy đủ) |
+| `domain-analyzer` | Trích xuất domain nghiệp vụ, flow và các bước quy trình (dùng bởi `/understand-domain`) |
+| `article-analyzer` | Trích xuất thực thể, luận điểm và quan hệ ngầm từ bài wiki (dùng bởi `/understand-knowledge`) |
+
+Các file-analyzer chạy song song (tối đa 5 đồng thời, 20-30 file mỗi batch). Hỗ trợ cập nhật tăng dần — chỉ phân tích lại file đã thay đổi kể từ lần chạy trước.
 
 ---
 
-## 🤝 Contributing
+## 🤝 Đóng góp
 
-Contributions are welcome! Here's how to get started:
+Rất hoan nghênh đóng góp! Cách bắt đầu:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/my-feature`)
-3. Run the tests (`pnpm --filter @understand-anything/core test`)
-4. Commit your changes and open a pull request
+1. Fork repository
+2. Tạo nhánh tính năng (`git checkout -b feature/my-feature`)
+3. Chạy test (`pnpm --filter @understand-anything/core test`)
+4. Commit thay đổi và mở pull request
 
-Please open an issue first for major changes so we can discuss the approach.
+Vui lòng mở issue trước cho các thay đổi lớn để cùng thảo luận hướng tiếp cận.
 
 ---
 
 <p align="center">
-  <strong>Stop reading code blind. Start understanding everything.</strong>
-</p>
-
-## Star History
-
-<a href="https://www.star-history.com/?repos=Egonex-AI%2FUnderstand-Anything&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=Egonex-AI/Understand-Anything&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=Egonex-AI/Understand-Anything&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=Egonex-AI/Understand-Anything&type=date&legend=top-left" />
- </picture>
-</a>
-
-<p align="center">
-  <em>Thanks to everyone who's used and contributed — knowing this saves people time is what made it worth building.</em>
+  <strong>Ngừng đọc code mù mờ. Bắt đầu hiểu mọi thứ.</strong>
 </p>
 
 <p align="center">
-  MIT License &copy; Yuxiang Lin and Infinite Universe, Inc.
+  Giấy phép MIT &copy; Yuxiang Lin và Infinite Universe, Inc. — bản tùy biến bởi <a href="https://github.com/huycoder2103">huycoder2103</a>.
 </p>
