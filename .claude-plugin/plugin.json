@@ -3,10 +3,10 @@
   "description": "AI-powered codebase understanding — analyze, visualize, and explain any project",
   "version": "2.9.4",
   "author": {
-    "name": "Egonex"
+    "name": "huycoder2103"
   },
-  "homepage": "https://github.com/Egonex-AI/Understand-Anything",
-  "repository": "https://github.com/Egonex-AI/Understand-Anything",
+  "homepage": "https://github.com/huycoder2103/Graph-Understanf-for-claudeCodeCLI",
+  "repository": "https://github.com/huycoder2103/Graph-Understanf-for-claudeCodeCLI",
   "license": "MIT",
   "keywords": [
     "codebase-analysis",

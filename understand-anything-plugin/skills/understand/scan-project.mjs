@@ -800,7 +800,7 @@ async function main() {
 // Canonicalize both sides through realpathSync. Node ESM resolves
 // import.meta.url through symlinks but pathToFileURL(process.argv[1]) preserves
 // them, so a raw equality check silently no-ops when the script is invoked via
-// a symlinked plugin install path (the default in Claude Code / Copilot CLI
+// a symlinked plugin install path (the default in Claude Code plugin
 // caches). See GitHub issue #162.
 // ---------------------------------------------------------------------------
 function isCliEntry() {

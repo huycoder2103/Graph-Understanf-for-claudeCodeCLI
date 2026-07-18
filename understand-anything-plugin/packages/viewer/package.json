@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Egonex-AI/Understand-Anything.git",
+    "url": "git+https://github.com/huycoder2103/Graph-Understanf-for-claudeCodeCLI.git",
     "directory": "understand-anything-plugin/packages/viewer"
   },
   "bin": {

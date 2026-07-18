@@ -26,7 +26,7 @@ An open-source tool combining LLM intelligence + static analysis to produce inte
 
 ## Agent Pipeline
 - Agents write intermediate results to the data directory's `intermediate/` subdirectory on disk (not returned to context) — `.ua/intermediate/`, or `.understand-anything/intermediate/` when that legacy directory is present
-- Agent model field is omitted from frontmatter so each platform falls back to its configured default — `inherit` was a Claude Code-only keyword that opencode (and similar tools) treated as a literal model id and rejected with `ProviderModelNotFoundError` (see #167)
+- Agent model field is omitted from frontmatter so Claude Code falls back to its configured default model
 - `/understand` auto-triggers `/understand-dashboard` after completion
 - Intermediate files cleaned up after graph assembly
 
@@ -58,13 +58,11 @@ An open-source tool combining LLM intelligence + static analysis to produce inte
 `packages/viewer` serves a committed graph without Claude Code, via `npx <release-asset-url>`. Update it when (a) the dashboard UI changes — the tarball embeds the built `dist/` — or (b) the `vite.config.ts` dev-server middleware changes, which `bin/viewer.mjs` deliberately mirrors. On every release, repack (`pack:release` script) and re-upload the tarball to the GitHub release as `understand-anything-viewer.tgz` — exactly that name, the READMEs' `releases/latest/download/` URL depends on it.
 
 ## Versioning
-When pushing to remote, bump the version in **all six** of these files (keep them in sync):
+This project is specialized for Claude Code only. When pushing to remote, bump the version in **all four** of these files (keep them in sync):
 - `understand-anything-plugin/package.json` → `"version"` field
 - `understand-anything-plugin/.claude-plugin/plugin.json` → `"version"` field
 - `understand-anything-plugin/packages/viewer/package.json` → `"version"` field
 - `.claude-plugin/plugin.json` → `"version"` field
-- `.cursor-plugin/plugin.json` → `"version"` field
-- `.copilot-plugin/plugin.json` → `"version"` field
 
 Note: `.claude-plugin/marketplace.json` does **not** carry a version — the `plugins[]` entry only supports `name` and `source`, and adding other fields causes marketplace schema validation failures.
 
